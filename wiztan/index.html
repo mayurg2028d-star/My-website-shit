@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wiztan Video Ads</title>
-<meta name="description" content="Wiztan turns one brief into a batch of AI-made video ads, each with a different hook and angle. Test them all, scale the winner. No shoot, no crew, no waiting." />
-<meta name="theme-color" content="#F3EEE4" />
+<title>Wiztan Marketing Agency</title>
+<meta name="description" content="Wiztan is an AI-powered performance marketing agency. We plan, produce and test video ads for growing brands, so you get more winning creatives, faster, for less than a traditional shoot." />
+<meta name="theme-color" content="#2B4BFF" />
 
-<meta property="og:title" content="Wiztan — One brief. Twelve ads. One winner." />
-<meta property="og:description" content="AI-made video ads built for testing. Many hooks, many angles, one brief. No shoot required." />
+<meta property="og:title" content="Wiztan — Video ads that sell. Made faster with AI." />
+<meta property="og:description" content="AI-powered performance marketing agency for D2C, e-commerce and local brands." />
 <meta property="og:type" content="website" />
 
-<link rel="icon" type="image/svg+xml" href="assets/logo/wiztan-app-icon.svg" />
+<link rel="icon" type="image/svg+xml" href="assets/logo/wiztan-mark.svg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/css/wiztan.css" />
 </head>
@@ -23,25 +23,21 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- Playhead progress -->
-<div class="playhead-bar" aria-hidden="true"><span id="playhead"></span></div>
-
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="nav-logo" aria-label="Wiztan home">
-      <img src="assets/logo/wiztan-logo.svg" alt="Wiztan" width="150" height="25" />
+      <img src="assets/logo/wiztan-logo.svg" alt="Wiztan" width="134" height="24" />
     </a>
-    <div class="rec" aria-hidden="true"><span class="rec-dot"></span>REC <span class="tc" id="timecode">00:00:00:00</span></div>
     <nav class="nav-links" id="navLinks" aria-label="Main">
-      <a href="#method">Method</a>
-      <a href="#channels">Who it's for</a>
-      <a href="#credits">Why us</a>
-      <a href="#tickets">Pricing</a>
-      <a href="#commentary">FAQ</a>
-      <a href="#slate" class="btn btn-red btn-sm nav-cta-mobile">Start a pilot</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-blue btn-sm nav-cta-mobile">Book a call</a>
     </nav>
-    <a href="#slate" class="btn btn-red btn-sm nav-cta">Start a pilot</a>
+    <a href="#contact" class="btn btn-blue btn-sm nav-cta">Book a call</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span>
     </button>
@@ -52,385 +48,470 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="wrap">
-      <p class="label reveal"><span class="sq"></span>AI video ads for brands that test</p>
-      <h1 class="hero-title">
-        <span class="ln reveal">One brief.</span>
-        <span class="ln reveal">Twelve ads.</span>
-        <span class="ln reveal">One <em>winner.</em></span>
-      </h1>
-      <div class="hero-row">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="pill reveal"><span class="pill-dot"></span>AI-powered performance marketing agency</p>
+        <h1 class="reveal">Video ads that <span class="mark">sell</span>. Made faster with AI.</h1>
         <p class="hero-sub reveal">
-          Wiztan turns one brief into a batch of AI-made video ads, each with a different hook, angle and format.
-          You test them all and scale the one that sells. No shoot, no crew, no waiting weeks.
+          Wiztan is a marketing agency for growing brands. We plan, produce and test video ads with AI,
+          so you get more winning creatives in less time, for less than a traditional shoot.
         </p>
         <div class="hero-ctas reveal">
-          <a href="#slate" class="btn btn-ink">Start a pilot <span aria-hidden="true">&rarr;</span></a>
-          <a href="#method" class="btn btn-line">See the method</a>
+          <a href="#contact" class="btn btn-blue">Book a strategy call <span aria-hidden="true">&rarr;</span></a>
+          <a href="#services" class="btn btn-ghost">Explore services</a>
         </div>
-      </div>
-    </div>
-
-    <!-- Contact sheet: one product, five angles -->
-    <div class="sheet-wrap reveal">
-      <div class="wrap sheet-meta">
-        <span class="mono">BATCH_07 &middot; pawsitive (sample brand) &middot; 5 of 12 angles</span>
-        <span class="mono sheet-hint">Playhead finds the winner &rarr;</span>
-      </div>
-      <div class="sheet-scroller" tabindex="0" aria-label="Example batch of five ad angles for one product">
-        <div class="sheet" id="sheet">
-          <div class="sheet-head" aria-hidden="true" id="sheetHead"></div>
-
-          <article class="clip c-ugc">
-            <span class="clip-tag">01 &middot; UGC</span>
-            <div class="clip-screen">
-              <div class="clip-top"><i></i>pawsitive<small>Sponsored</small></div>
-              <div class="ugc-face" aria-hidden="true"><span></span></div>
-              <p class="ugc-cap">POV: you found the treat your dog <b>won't</b> ignore</p>
-              <span class="clip-cta">Shop now</span>
-            </div>
-            <span class="stamp">Winner</span>
-          </article>
-
-          <article class="clip c-fix">
-            <span class="clip-tag">02 &middot; Problem &rarr; fix</span>
-            <div class="clip-screen">
-              <div class="clip-top"><i></i>pawsitive<small>Sponsored</small></div>
-              <p class="fix-q">Pulling on <br />every walk?</p>
-              <div class="fix-x" aria-hidden="true"><span>&times;</span><span>&check;</span></div>
-              <p class="fix-a">Fixed in 10 seconds.</p>
-              <span class="clip-cta">See how</span>
-            </div>
-            <span class="stamp">Winner</span>
-          </article>
-
-          <article class="clip c-offer">
-            <span class="clip-tag">03 &middot; Offer</span>
-            <div class="clip-screen">
-              <div class="clip-top"><i></i>pawsitive<small>Sponsored</small></div>
-              <p class="offer-big">30<sup>%</sup></p>
-              <p class="offer-txt">off your first box.<br /><em>Ends Sunday.</em></p>
-              <span class="clip-cta">Claim it</span>
-            </div>
-            <span class="stamp">Winner</span>
-          </article>
-
-          <article class="clip c-ba">
-            <span class="clip-tag">04 &middot; Before / after</span>
-            <div class="clip-screen">
-              <div class="clip-top"><i></i>pawsitive<small>Sponsored</small></div>
-              <div class="ba"><span>Before</span><span>After</span></div>
-              <p class="ba-cap">Same dog. Same park. <b>Week 2.</b></p>
-              <span class="clip-cta">Try it</span>
-            </div>
-            <span class="stamp">Winner</span>
-          </article>
-
-          <article class="clip c-founder">
-            <span class="clip-tag">05 &middot; Founder</span>
-            <div class="clip-screen">
-              <div class="clip-top"><i></i>pawsitive<small>Sponsored</small></div>
-              <p class="founder-q">&ldquo;I started this because my own dog wouldn't listen.&rdquo;</p>
-              <p class="founder-by">&mdash; Founder, pawsitive</p>
-              <span class="clip-cta">Our story</span>
-            </div>
-            <span class="stamp">Winner</span>
-          </article>
-
-          <div class="sheet-playhead" id="sheetPlayhead" aria-hidden="true"><span></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-label="No shoot, no crew, no studio, hooks in two seconds, ready in five days">
-    <div class="ticker-track" aria-hidden="true">
-      <span>No shoot</span><span>No crew</span><span>No studio</span><span>Hooks in 2 seconds</span><span>Ready in 5 days</span><span>Built to test</span>
-      <span>No shoot</span><span>No crew</span><span>No studio</span><span>Hooks in 2 seconds</span><span>Ready in 5 days</span><span>Built to test</span>
-    </div>
-  </div>
-
-  <!-- PROBLEM: rejected takes -->
-  <section class="section dark" id="takes">
-    <div class="wrap">
-      <div class="head reveal">
-        <p class="label label-light"><span class="sq"></span>00:00:00 &ndash; 00:00:02</p>
-        <h2>You get two seconds. <em>Most ads waste them.</em></h2>
-      </div>
-      <div class="takes">
-        <article class="take reveal">
-          <div class="take-bar"><span class="mono">Take 01</span><span class="cut">Cut</span></div>
-          <h3>The big shoot</h3>
-          <p>Weeks of planning, a crew and a location, for one video. You still don't know if it'll work.</p>
-        </article>
-        <article class="take reveal">
-          <div class="take-bar"><span class="mono">Take 02</span><span class="cut">Cut</span></div>
-          <h3>The phone video</h3>
-          <p>Cheap and quick, but nobody stops scrolling for it. It also doesn't look like your brand.</p>
-        </article>
-        <article class="take reveal">
-          <div class="take-bar"><span class="mono">Take 03</span><span class="cut">Cut</span></div>
-          <h3>The same ad, again</h3>
-          <p>It worked in March. Now your audience has seen it nine times and it's wallpaper.</p>
-        </article>
-        <article class="take take-good reveal">
-          <div class="take-bar"><span class="mono">Take 04</span><span class="print">Print it</span></div>
-          <h3>The Wiztan batch</h3>
-          <p>Many angles from one brief, made fast and built to test. Your data picks the winner, and we make more like it.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHOD: screenplay -->
-  <section class="section" id="method">
-    <div class="wrap method">
-      <div class="method-copy reveal">
-        <p class="label"><span class="sq"></span>The method</p>
-        <h2>Three scenes. <em>Five days.</em></h2>
-        <p class="lead">You write the brief. We write the hooks, make the footage, cut the ads and check every frame. Then you press go.</p>
-
-        <div class="callsheet">
-          <p class="callsheet-title mono">Call sheet &middot; every pilot</p>
-          <dl>
-            <div><dt>Hooks</dt><dd>3 openings per ad</dd></div>
-            <div><dt>Formats</dt><dd>9:16 &middot; 4:5 &middot; 1:1</dd></div>
-            <div><dt>Captions</dt><dd>On-brand, readable on mute</dd></div>
-            <div><dt>Copy</dt><dd>Primary text + headlines</dd></div>
-            <div><dt>QA</dt><dd>Human check, every frame</dd></div>
-            <div><dt>Revisions</dt><dd>2 rounds included</dd></div>
-          </dl>
-        </div>
-      </div>
-
-      <div class="script reveal" aria-label="The Wiztan method, written as a screenplay">
-        <p class="sc-trans">FADE IN:</p>
-
-        <p class="sc-head"><span class="sc-n">1</span>INT. YOUR BRAND &mdash; DAY 0</p>
-        <p class="sc-act">You send us your product, your offer, who you sell to and how your brand should feel.</p>
-        <p class="sc-char">WIZTAN (V.O.)</p>
-        <p class="sc-dia">That's all we need. Fifteen minutes, tops.</p>
-
-        <p class="sc-trans r">CUT TO:</p>
-
-        <p class="sc-head"><span class="sc-n">2</span>INT. THE WIZTAN EDIT &mdash; DAYS 1&ndash;4</p>
-        <p class="sc-act">We write a dozen hooks and keep the strongest angles. Then we generate the footage with AI, and edit, caption and size every cut.</p>
-        <p class="sc-char">WIZTAN (V.O.)</p>
-        <p class="sc-paren">(firmly)</p>
-        <p class="sc-dia">A human checks every frame. Nothing ships looking &ldquo;AI-made.&rdquo;</p>
-
-        <p class="sc-trans r">CUT TO:</p>
-
-        <p class="sc-head"><span class="sc-n">3</span>EXT. YOUR AD ACCOUNT &mdash; DAY 5</p>
-        <p class="sc-act">You launch the batch. The data picks a winner. We make more like it.</p>
-
-        <p class="sc-trans r">FADE OUT.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHANNELS: niches -->
-  <section class="section dark" id="channels">
-    <div class="wrap">
-      <div class="head reveal">
-        <p class="label label-light"><span class="sq"></span>Who it's for</p>
-        <h2>Pick your channel.</h2>
-        <p class="lead">Wiztan is built for brands that need fresh ads more often than they could ever shoot them.</p>
-      </div>
-
-      <div class="tv reveal">
-        <div class="tv-tabs" role="tablist" aria-label="Choose your niche">
-          <button role="tab" aria-selected="true" aria-controls="tvPanel" id="ch-0" data-ch="0"><span class="mono">CH 01</span>D2C &amp; e-com</button>
-          <button role="tab" aria-selected="false" aria-controls="tvPanel" id="ch-1" data-ch="1" tabindex="-1"><span class="mono">CH 02</span>Real estate</button>
-          <button role="tab" aria-selected="false" aria-controls="tvPanel" id="ch-2" data-ch="2" tabindex="-1"><span class="mono">CH 03</span>Pet brands</button>
-          <button role="tab" aria-selected="false" aria-controls="tvPanel" id="ch-3" data-ch="3" tabindex="-1"><span class="mono">CH 04</span>Local business</button>
-        </div>
-        <div class="tv-panel" id="tvPanel" role="tabpanel" aria-labelledby="ch-0">
-          <div class="tv-info">
-            <p class="tv-ch mono" id="tvCh">CH 01 &middot; Now showing</p>
-            <h3 id="tvTitle">D2C &amp; e-commerce</h3>
-            <p id="tvDesc">You run Meta and Instagram ads and burn through creatives. We keep a steady flow of fresh angles coming, so ad fatigue never catches up.</p>
-          </div>
-          <div class="tv-hooks" id="tvHooks">
-            <p class="hook"><span class="mono">Hook A</span>&ldquo;Your skincare routine has 9 steps. Ours has 2.&rdquo;</p>
-            <p class="hook"><span class="mono">Hook B</span>&ldquo;I tried every serum for oily skin. One stayed.&rdquo;</p>
-            <p class="hook"><span class="mono">Hook C</span>&ldquo;Stop buying serums that do nothing.&rdquo;</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDITS: why Wiztan -->
-  <section class="section credits-sec" id="credits">
-    <div class="wrap">
-      <div class="head center reveal">
-        <p class="label"><span class="sq"></span>Why Wiztan</p>
-        <h2>Made by a performance marketer, <em>not a prompt jockey.</em></h2>
-        <p class="lead">AI tools are a commodity. Anyone can type a prompt. What sells is the hook, the angle and the test, and that's where we start.</p>
-      </div>
-      <ul class="credits">
-        <li class="reveal"><span class="role">Performance marketing</span><span class="dots"></span><span class="who">Paid ads, A/B tests &amp; analytics, run in-house</span></li>
-        <li class="reveal"><span class="role">Script &amp; hooks</span><span class="dots"></span><span class="who">Written to convert, not just to look good</span></li>
-        <li class="reveal"><span class="role">Design &amp; edit</span><span class="dots"></span><span class="who">End to end, with no hand-offs</span></li>
-        <li class="reveal"><span class="role">Niche know-how</span><span class="dots"></span><span class="who">Pet training &middot; real estate</span></li>
-        <li class="reveal"><span class="role">Audience building</span><span class="dots"></span><span class="who">Grew a 34K-member community</span></li>
-        <li class="reveal"><span class="role">Final cut</span><span class="dots"></span><span class="who">A human, every single time</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- QUALITY BAND -->
-  <section class="band">
-    <div class="wrap band-inner reveal">
-      <p class="band-text">AI shoots it. <em>A human makes the final cut.</em></p>
-      <div class="band-stamp" aria-hidden="true">Approved<br />for air</div>
-    </div>
-  </section>
-
-  <!-- TICKETS: pricing -->
-  <section class="section" id="tickets">
-    <div class="wrap">
-      <div class="head reveal">
-        <p class="label"><span class="sq"></span>Pricing</p>
-        <h2>Two ways in. <em>Both end with a winner.</em></h2>
-        <p class="lead">Start with a pilot to prove it works in your ad account. Then keep the ads coming every month.</p>
-      </div>
-
-      <div class="tickets">
-        <article class="ticket t-red reveal">
-          <div class="t-main">
-            <p class="t-kicker mono">Admit one &middot; Season 1</p>
-            <h3>The Pilot</h3>
-            <p class="t-desc">A small paid batch to test in your real ad account.</p>
-            <ul>
-              <li>3&ndash;5 finished video ads</li>
-              <li>3 hook variants per ad</li>
-              <li>9:16, 4:5 and 1:1 cuts</li>
-              <li>2 revision rounds</li>
-              <li>Delivered in about 5 days</li>
-            </ul>
-            <a href="#slate" class="btn btn-ink">Start a pilot <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <div class="t-stub" aria-hidden="true"><span class="mono">No. 001</span><span class="t-stub-big">Pilot</span></div>
-        </article>
-
-        <article class="ticket t-ink reveal">
-          <div class="t-main">
-            <p class="t-kicker mono">Season pass &middot; monthly</p>
-            <h3>The Series</h3>
-            <p class="t-desc">Fresh ads every month, so performance doesn't fade.</p>
-            <ul>
-              <li>A fixed number of new ads each month</li>
-              <li>New angles based on your winners</li>
-              <li>Priority turnaround</li>
-              <li>Monthly creative review call</li>
-            </ul>
-            <a href="#slate" class="btn btn-red">Get a quote <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <div class="t-stub" aria-hidden="true"><span class="mono">No. 002</span><span class="t-stub-big">Series</span></div>
-        </article>
-      </div>
-      <p class="tickets-note reveal mono">Pricing depends on volume and format &middot; quote within 24 hours</p>
-    </div>
-  </section>
-
-  <!-- COMMENTARY: FAQ -->
-  <section class="section dark" id="commentary">
-    <div class="wrap faq-grid">
-      <div class="head reveal">
-        <p class="label label-light"><span class="sq"></span>FAQ</p>
-        <h2>Director's <em>commentary.</em></h2>
-      </div>
-      <div class="faq">
-        <details class="reveal">
-          <summary><span class="mono">00:12</span>Will the ads look &ldquo;AI-generated&rdquo;?</summary>
-          <p>Not if we do our job. Every ad gets a human review before you see it, and we fix anything that looks off: hands, text, motion or brand colours.</p>
-        </details>
-        <details class="reveal">
-          <summary><span class="mono">00:31</span>Why so many versions of one ad?</summary>
-          <p>Nobody knows in advance which hook will work, not even big agencies. Testing several angles at once is the fastest and cheapest way to find the one that does. Then we make more like it.</p>
-        </details>
-        <details class="reveal">
-          <summary><span class="mono">00:47</span>What do you need from me?</summary>
-          <p>Your product or service, the offer, who you sell to, and any brand assets you have: logo, colours, product photos, past ads. If you have none, we'll work from your website or Instagram.</p>
-        </details>
-        <details class="reveal">
-          <summary><span class="mono">01:05</span>Do you run the ads too?</summary>
-          <p>We make the creatives and suggest copy and a testing plan for Meta Ads Manager. If you want help setting up campaigns, ask and we'll scope it.</p>
-        </details>
-        <details class="reveal">
-          <summary><span class="mono">01:22</span>Who owns the ads?</summary>
-          <p>You do. Once a pack is paid for, the final videos are yours to run on any platform for as long as you like.</p>
-        </details>
-        <details class="reveal">
-          <summary><span class="mono">01:40</span>Can you match my existing brand?</summary>
-          <p>Yes. We follow your fonts, colours, tone and any do's and don'ts, and keep a brand sheet so every month's ads stay consistent.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- SLATE: contact -->
-  <section class="section slate-sec" id="slate">
-    <div class="wrap slate-grid">
-      <div class="slate-copy reveal">
-        <p class="label"><span class="sq"></span>Start a pilot</p>
-        <h2>Roll <em>camera.</em></h2>
-        <p class="lead">Fill in the slate. We'll reply within 24 hours with first hook ideas and a clear quote. There's no sales pitch and no obligation.</p>
-        <ul class="slate-points">
-          <li><span class="mono">01</span>Hook ideas built around your product</li>
-          <li><span class="mono">02</span>Honest advice on what to test first</li>
-          <li><span class="mono">03</span>A clear quote before any work starts</li>
+        <ul class="hero-trust reveal">
+          <li><span class="check" aria-hidden="true"></span>Ads live in days, not weeks</li>
+          <li><span class="check" aria-hidden="true"></span>Built for Meta &amp; Instagram</li>
+          <li><span class="check" aria-hidden="true"></span>Human-reviewed, never &ldquo;AI-looking&rdquo;</li>
         </ul>
       </div>
 
-      <form class="slate reveal" id="leadForm" novalidate>
-        <div class="clapper" id="clapper" aria-hidden="true">
-          <div class="clap-top"></div>
-          <div class="clap-bottom"></div>
+      <!-- Dashboard visual -->
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="dash">
+          <div class="dash-head">
+            <span class="dash-dots"><i></i><i></i><i></i></span>
+            <span class="dash-title">Creative test &middot; Spring launch</span>
+            <span class="dash-tag">Example</span>
+          </div>
+          <div class="dash-body">
+            <div class="ad-preview" id="adPreview" data-v="0">
+              <div class="ad-top"><span class="ad-av"></span><b id="adBrand">glowlab</b><small>Sponsored</small></div>
+              <div class="ad-art"><span class="ad-prod"></span><span class="ad-glow"></span></div>
+              <p class="ad-hook" id="adHook">Your skincare routine has 9 steps. Ours has 2.</p>
+              <span class="ad-cta" id="adCta">Shop now</span>
+            </div>
+            <div class="dash-side">
+              <p class="dash-label">Hook performance</p>
+              <div class="bars" id="bars">
+                <div class="bar-row" data-i="0"><span class="bar-name">Hook A</span><span class="bar"><span style="--w:52%"></span></span></div>
+                <div class="bar-row win" data-i="1"><span class="bar-name">Hook B</span><span class="bar"><span style="--w:88%"></span></span></div>
+                <div class="bar-row" data-i="2"><span class="bar-name">Hook C</span><span class="bar"><span style="--w:64%"></span></span></div>
+              </div>
+              <div class="winner"><span class="winner-ico">&#9650;</span><div><b>Hook B is winning</b><small>Next: 3 new ads in its style</small></div></div>
+              <div class="dash-stats">
+                <div><small>Formats</small><b>9:16 &middot; 4:5 &middot; 1:1</b></div>
+                <div><small>Variants</small><b>9 ads</b></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="slate-body">
-          <div class="slate-row two">
-            <div class="field">
-              <label for="f-biz">Production</label>
-              <input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="Your business name" required />
-            </div>
-            <div class="field">
-              <label for="f-name">Director</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-            </div>
-          </div>
-          <div class="slate-row two">
-            <div class="field">
-              <label for="f-niche">Scene</label>
-              <select id="f-niche" name="niche">
-                <option>D2C / e-commerce</option>
-                <option>Real estate</option>
-                <option>Pet products or training</option>
-                <option>Clinic, coaching or local service</option>
-                <option>Restaurant or caf&eacute;</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-link">Location</label>
-              <input id="f-link" name="link" type="text" placeholder="yourbrand.com or @yourbrand" />
-            </div>
-          </div>
-          <div class="slate-row">
-            <div class="field">
-              <label for="f-msg">Take <span class="opt">(what should the ads achieve?)</span></label>
-              <textarea id="f-msg" name="message" rows="2" placeholder="Launch offer, more store visits, cheaper leads&hellip;"></textarea>
-            </div>
-          </div>
-          <div class="slate-foot">
-            <span class="mono slate-date" id="slateDate">Date &middot; &mdash;</span>
-            <button type="submit" class="btn btn-red">Action! <span aria-hidden="true">&rarr;</span></button>
-          </div>
-          <p class="form-note" id="formNote" role="status">This opens your email app with your details filled in.</p>
+        <div class="float f1"><span class="f-ico f-blue">&#10003;</span>Human QA passed</div>
+        <div class="float f2"><span class="f-ico f-volt">&#9733;</span>Delivered in 5 days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NICHE STRIP -->
+  <section class="strip" aria-label="Industries we work with">
+    <p class="strip-label">Built for growing brands in</p>
+    <div class="strip-scroller">
+      <div class="strip-track">
+        <span>D2C &amp; e-commerce</span><span>Real estate</span><span>Pet brands</span><span>Clinics &amp; wellness</span><span>Coaches &amp; creators</span><span>Restaurants &amp; caf&eacute;s</span>
+        <span aria-hidden="true">D2C &amp; e-commerce</span><span aria-hidden="true">Real estate</span><span aria-hidden="true">Pet brands</span><span aria-hidden="true">Clinics &amp; wellness</span><span aria-hidden="true">Coaches &amp; creators</span><span aria-hidden="true">Restaurants &amp; caf&eacute;s</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">The problem</p>
+        <h2>Video wins attention. <br class="br" />Most brands can't keep up.</h2>
+        <p class="lead">Short video is where your customers are scrolling. But making enough good ads, often enough, is out of reach for most growing brands.</p>
+      </div>
+      <div class="problems">
+        <article class="problem reveal">
+          <span class="p-num">01</span>
+          <h3>Production is slow and costly</h3>
+          <p>Shoots need crews, locations and weeks of planning. You pay big for a handful of videos before you know if any will work.</p>
+        </article>
+        <article class="problem reveal">
+          <span class="p-num">02</span>
+          <h3>Ads burn out fast</h3>
+          <p>Audiences tire of the same creative within weeks. Without a steady supply of fresh ads, your costs creep up.</p>
+        </article>
+        <article class="problem reveal">
+          <span class="p-num">03</span>
+          <h3>Editors don't think like marketers</h3>
+          <p>A good-looking video isn't the same as one that converts. Without hooks, offers and testing, ads just look nice.</p>
+        </article>
+      </div>
+      <div class="fix reveal">
+        <span class="fix-logo"><img src="assets/logo/wiztan-mark.svg" alt="" width="40" height="40" /></span>
+        <p><b>Wiztan fixes all three.</b> AI makes production fast and affordable. Marketers make sure every ad is built to sell, and to be tested.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section tint" id="services">
+    <div class="wrap">
+      <div class="head head-row reveal">
+        <div>
+          <p class="eyebrow">Services</p>
+          <h2>Everything you need to win with video ads.</h2>
         </div>
+        <p class="lead">Pick one service or let us run the whole engine. Either way, every creative is planned around your offer, your audience and your numbers.</p>
+      </div>
+
+      <div class="services">
+        <article class="svc svc-feature reveal">
+          <div class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></div>
+          <h3>AI video ads</h3>
+          <p>Scroll-stopping ads for Reels, Stories and Feed. Produced with the latest AI tools, then edited, captioned and polished by people.</p>
+          <ul class="tags">
+            <li>UGC-style</li><li>Product demos</li><li>Offers &amp; launches</li><li>Explainers</li><li>Before / after</li><li>Listing tours</li>
+          </ul>
+          <div class="svc-formats" aria-hidden="true">
+            <span class="fmt f916">9:16</span><span class="fmt f45">4:5</span><span class="fmt f11">1:1</span>
+          </div>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M17 15l2 2 3-4"/></svg></div>
+          <h3>Hooks, scripts &amp; ad copy</h3>
+          <p>Opening hooks, scripts and primary text written by marketers, built around your offer and the way your customers talk.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Creative testing</h3>
+          <p>Several hooks and angles for every ad, set up so you learn what works quickly and put more budget behind it.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+          <h3>Paid social management</h3>
+          <p>Campaign setup, audiences and day-to-day optimisation on Meta and Instagram, if you'd like us to run the ads too.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <h3>Reporting &amp; insights</h3>
+          <p>A clear monthly report on what worked, what didn't, and what we'll make next. No jargon and no vanity metrics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="section" id="compare">
+    <div class="wrap">
+      <div class="head center reveal">
+        <p class="eyebrow">Why Wiztan</p>
+        <h2>Agency thinking. <span class="blue">Without agency timelines.</span></h2>
+      </div>
+      <div class="compare reveal">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr">Feature</span></th>
+              <th scope="col">Traditional production</th>
+              <th scope="col">Freelance editor</th>
+              <th scope="col" class="us"><img src="assets/logo/wiztan-logo-white.svg" alt="Wiztan" width="104" height="19" /></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Time to first ad</th><td>Weeks</td><td>Varies</td><td class="us">About 5 days</td></tr>
+            <tr><th scope="row">Cost per ad</th><td>High</td><td>Low to medium</td><td class="us">A fraction of a shoot</td></tr>
+            <tr><th scope="row">Fresh creatives every month</th><td><span class="no">No</span></td><td><span class="part">Some</span></td><td class="us"><span class="yes">Yes</span></td></tr>
+            <tr><th scope="row">Hooks &amp; A/B testing built in</th><td><span class="no">No</span></td><td><span class="no">No</span></td><td class="us"><span class="yes">Yes</span></td></tr>
+            <tr><th scope="row">Marketing strategy</th><td><span class="part">Sometimes</span></td><td><span class="no">No</span></td><td class="us"><span class="yes">Yes</span></td></tr>
+            <tr><th scope="row">Revisions</th><td>Costly</td><td>Limited</td><td class="us">Included</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section dark" id="process">
+    <div class="wrap">
+      <div class="head head-row reveal">
+        <div>
+          <p class="eyebrow eyebrow-volt">Process</p>
+          <h2>From first call to live ads in about a week.</h2>
+        </div>
+        <p class="lead">A simple, transparent process. You approve the plan before we produce anything, and you always know what's next.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-when">30 minutes</span>
+          <span class="step-n">01</span>
+          <h3>Strategy call</h3>
+          <p>We learn your goals, offer, audience and budget, and look at what you've run before.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-when">Days 1&ndash;2</span>
+          <span class="step-n">02</span>
+          <h3>Creative plan</h3>
+          <p>Hooks, angles and scripts for every ad, sent to you for a quick approval.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-when">Days 2&ndash;5</span>
+          <span class="step-n">03</span>
+          <h3>Production &amp; QA</h3>
+          <p>AI production, editing, captions and sizing, plus a human check on every frame.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-when">Ongoing</span>
+          <span class="step-n">04</span>
+          <h3>Launch &amp; optimise</h3>
+          <p>Ads go live, we read the data, and we make more of what wins.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="head head-row reveal">
+        <div>
+          <p class="eyebrow">Work</p>
+          <h2>Ad concepts we'd make for brands like yours.</h2>
+        </div>
+        <p class="lead">These sample concepts show how we approach each industry. Client case studies are on the way.</p>
+      </div>
+      <div class="work">
+        <article class="concept reveal">
+          <div class="phone ph-blue">
+            <span class="ph-tag">9:16 &middot; Reels</span>
+            <p class="ph-hook">&ldquo;Your skincare routine has 9 steps. Ours has 2.&rdquo;</p>
+            <span class="ph-cta">Shop now</span>
+          </div>
+          <div class="concept-meta">
+            <span class="c-ind">D2C &amp; e-commerce</span>
+            <h3>The 2-step routine</h3>
+            <p>Angle: simplicity vs. competitor clutter</p>
+          </div>
+        </article>
+        <article class="concept reveal">
+          <div class="phone ph-ink">
+            <span class="ph-tag">4:5 &middot; Feed</span>
+            <p class="ph-hook">&ldquo;3BHK, park-facing, 8 minutes from the metro. Take the 20-second tour.&rdquo;</p>
+            <span class="ph-cta">Book a visit</span>
+          </div>
+          <div class="concept-meta">
+            <span class="c-ind">Real estate</span>
+            <h3>The 20-second tour</h3>
+            <p>Angle: location and lifestyle, fast</p>
+          </div>
+        </article>
+        <article class="concept reveal">
+          <div class="phone ph-volt">
+            <span class="ph-tag">9:16 &middot; Stories</span>
+            <p class="ph-hook">&ldquo;Your dog pulls on every walk. Here's the 10-second fix.&rdquo;</p>
+            <span class="ph-cta">See how</span>
+          </div>
+          <div class="concept-meta">
+            <span class="c-ind">Pet brands</span>
+            <h3>The 10-second fix</h3>
+            <p>Angle: problem &rarr; solution</p>
+          </div>
+        </article>
+        <article class="concept reveal">
+          <div class="phone ph-soft">
+            <span class="ph-tag">1:1 &middot; Feed</span>
+            <p class="ph-hook">&ldquo;New in Koramangala: first consultation free this week only.&rdquo;</p>
+            <span class="ph-cta">Book now</span>
+          </div>
+          <div class="concept-meta">
+            <span class="c-ind">Clinics &amp; local</span>
+            <h3>The opening offer</h3>
+            <p>Angle: local, urgent, low-risk</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section tint" id="about">
+    <div class="wrap about">
+      <div class="about-copy reveal">
+        <p class="eyebrow">Who's behind Wiztan</p>
+        <h2>Run by a performance marketer, not just an editor.</h2>
+        <p class="lead">AI tools are everywhere, so they aren't the edge. The edge is knowing which hook, offer and angle will move your numbers, and testing to prove it. That's how Wiztan was built.</p>
+        <a href="#contact" class="btn btn-blue">Talk to us <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="creds">
+        <div class="cred reveal">
+          <span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <h3>Paid ads &amp; A/B testing</h3>
+          <p>In-house growth marketing at Toffy AI: paid ads, testing and analytics.</p>
+        </div>
+        <div class="cred reveal">
+          <span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20l9-9-4-4-9 9v4h4z"/><path d="M14 6l4 4"/></svg></span>
+          <h3>Design, editing &amp; copy</h3>
+          <p>Strategy to final cut under one roof, with no hand-offs.</p>
+        </div>
+        <div class="cred reveal">
+          <span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/></svg></span>
+          <h3>Niche experience</h3>
+          <p>Hands-on marketing in pet training and real estate.</p>
+        </div>
+        <div class="cred reveal">
+          <span class="cred-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M16 4.5a3.5 3.5 0 010 7M18 14c2.5.6 4 2.8 4 6"/></svg></span>
+          <h3>Audience building</h3>
+          <p>Grew and ran a community of 34,000 members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="head center reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Simple plans. Clear scope.</h2>
+        <p class="lead">Start with a pilot, then scale with a plan that fits your growth. Every plan is quoted upfront, with no surprise invoices.</p>
+      </div>
+      <div class="plans">
+        <article class="plan reveal">
+          <h3>Pilot</h3>
+          <p class="plan-for">Try us on one campaign</p>
+          <ul>
+            <li>3&ndash;5 finished video ads</li>
+            <li>3 hook variants per ad</li>
+            <li>9:16, 4:5 and 1:1 formats</li>
+            <li>Ad copy suggestions</li>
+            <li>2 revision rounds</li>
+            <li>Delivered in about 5 days</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Start a pilot</a>
+        </article>
+        <article class="plan plan-pop reveal">
+          <span class="plan-badge">Most popular</span>
+          <h3>Creative retainer</h3>
+          <p class="plan-for">Fresh ads every month</p>
+          <ul>
+            <li>A fixed number of new ads monthly</li>
+            <li>Hooks and angles based on your data</li>
+            <li>Ongoing creative testing plan</li>
+            <li>Monthly report and strategy call</li>
+            <li>Priority turnaround</li>
+          </ul>
+          <a href="#contact" class="btn btn-volt">Get a quote</a>
+        </article>
+        <article class="plan reveal">
+          <h3>Growth partner</h3>
+          <p class="plan-for">Creatives + ad management</p>
+          <ul>
+            <li>Everything in Creative retainer</li>
+            <li>Meta &amp; Instagram campaign management</li>
+            <li>Audience and budget optimisation</li>
+            <li>Weekly performance check-ins</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Talk to us</a>
+        </article>
+      </div>
+      <p class="plans-note reveal">Pricing depends on volume and scope. Tell us your goals and we'll send a clear quote within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section tint" id="faq">
+    <div class="wrap faq-grid">
+      <div class="head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered.</h2>
+        <p class="lead">Something else on your mind? <a href="#contact" class="text-link">Ask us directly.</a></p>
+      </div>
+      <div class="faq">
+        <details class="reveal">
+          <summary>Will the ads look &ldquo;AI-generated&rdquo;?</summary>
+          <p>No. Every ad goes through a human review before you see it, and we fix anything that looks off: hands, text, motion or brand colours. If it doesn't meet our standard, it doesn't ship.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you only make ads, or can you run them too?</summary>
+          <p>Both. Many clients start with creatives only. Our Growth partner plan adds campaign setup and management on Meta and Instagram.</p>
+        </details>
+        <details class="reveal">
+          <summary>Why make several versions of each ad?</summary>
+          <p>No one can predict which hook will win, not even big agencies. Testing several angles at once is the fastest and cheapest way to find it. Then we make more like it.</p>
+        </details>
+        <details class="reveal">
+          <summary>What do you need from us to start?</summary>
+          <p>Your product or service, the offer, who you sell to, and any brand assets you have: logo, colours, product photos, past ads. If you have none, we'll work from your website or Instagram.</p>
+        </details>
+        <details class="reveal">
+          <summary>Who owns the ads?</summary>
+          <p>You do. Once paid for, the final videos are yours to run on any platform, for as long as you like.</p>
+        </details>
+        <details class="reveal">
+          <summary>Which industries do you work with?</summary>
+          <p>We focus on D2C and e-commerce brands, real estate, pet brands, and local businesses such as clinics, coaches and restaurants. If you sell something people can see, we can probably help.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section dark contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow eyebrow-volt">Book a call</p>
+        <h2>Let's grow your brand with <span class="volt">video ads that sell.</span></h2>
+        <p class="lead">Tell us about your business. We'll reply within 24 hours to set up a 30-minute strategy call.</p>
+        <ul class="contact-list">
+          <li><span class="check check-volt" aria-hidden="true"></span>A quick review of your current ads</li>
+          <li><span class="check check-volt" aria-hidden="true"></span>Hook and angle ideas for your brand</li>
+          <li><span class="check check-volt" aria-hidden="true"></span>A clear plan and quote, with no obligation</li>
+        </ul>
+      </div>
+      <form class="form reveal" id="leadForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-biz">Business name</label>
+            <input id="f-biz" name="business" type="text" autocomplete="organization" required />
+          </div>
+          <div class="field">
+            <label for="f-link">Website or Instagram</label>
+            <input id="f-link" name="link" type="text" placeholder="yourbrand.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-ind">Industry</label>
+            <select id="f-ind" name="industry">
+              <option>D2C / e-commerce</option>
+              <option>Real estate</option>
+              <option>Pet brand or trainer</option>
+              <option>Clinic or wellness</option>
+              <option>Coach or creator</option>
+              <option>Restaurant or caf&eacute;</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-budget">Monthly ad budget</label>
+            <select id="f-budget" name="budget">
+              <option>Not running ads yet</option>
+              <option>Under &#8377;50,000</option>
+              <option>&#8377;50,000 &ndash; &#8377;2 lakh</option>
+              <option>&#8377;2 lakh &ndash; &#8377;5 lakh</option>
+              <option>Above &#8377;5 lakh</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">What are you looking for? <span class="opt">(optional)</span></label>
+          <textarea id="f-msg" name="message" rows="3" placeholder="e.g. ads for a product launch, lower cost per lead, fresh creatives monthly"></textarea>
+        </div>
+        <button type="submit" class="btn btn-volt btn-block">Book my strategy call <span aria-hidden="true">&rarr;</span></button>
+        <p class="form-note" id="formNote" role="status">This opens your email app with your details filled in.</p>
       </form>
     </div>
   </section>
@@ -439,17 +520,34 @@
 
 <footer class="footer">
   <div class="wrap">
-    <p class="wrap-line mono">That's a wrap.</p>
-    <img class="footer-word" src="assets/logo/wiztan-wordmark.svg" alt="Wiztan" width="1200" height="243" />
-    <div class="footer-row">
-      <p>AI video ads, built to test.</p>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="#method">Method</a>
-        <a href="#tickets">Pricing</a>
-        <a href="#commentary">FAQ</a>
-        <a href="#slate">Contact</a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo/wiztan-logo.svg" alt="Wiztan" width="134" height="24" />
+        <p>AI-powered performance marketing for growing brands.</p>
+      </div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div>
+          <p class="fc-title">Company</p>
+          <a href="#about">About</a>
+          <a href="#process">Process</a>
+          <a href="#work">Work</a>
+        </div>
+        <div>
+          <p class="fc-title">Services</p>
+          <a href="#services">AI video ads</a>
+          <a href="#services">Creative testing</a>
+          <a href="#services">Paid social</a>
+        </div>
+        <div>
+          <p class="fc-title">Get in touch</p>
+          <a href="#contact">Book a call</a>
+          <a href="mailto:hello@wiztan.com" id="footerEmail">hello@wiztan.com</a>
+        </div>
       </nav>
-      <p class="mono">&copy; <span id="year">2026</span> Wiztan</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> Wiztan. All rights reserved.</p>
+      <a href="#top" class="text-link">Back to top &uarr;</a>
     </div>
   </div>
 </footer>
