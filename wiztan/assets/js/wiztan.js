@@ -11,12 +11,6 @@
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");
 
-  function onScroll() {
-    nav.classList.toggle("scrolled", window.scrollY > 20);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
   function setMenu(open) {
     links.classList.toggle("open", open);
     toggle.setAttribute("aria-expanded", String(open));
@@ -29,6 +23,24 @@
     if (e.target.closest("a")) setMenu(false);
   });
 
+  // Scroll = a 30-second spot: playhead bar + REC timecode (25 fps)
+  var playhead = document.getElementById("playhead");
+  var timecode = document.getElementById("timecode");
+  var SPOT_SECONDS = 30, FPS = 25;
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    nav.classList.toggle("scrolled", window.scrollY > 20);
+    playhead.style.width = (p * 100) + "%";
+    var frames = Math.round(p * SPOT_SECONDS * FPS);
+    var s = Math.floor(frames / FPS);
+    timecode.textContent = "00:00:" + pad(s) + ":" + pad(frames % FPS);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
   // Reveal on scroll
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduceMotion) {
@@ -39,99 +51,178 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
     reveals.forEach(function (el, i) {
-      el.style.transitionDelay = (i % 4) * 70 + "ms";
+      el.style.transitionDelay = (i % 4) * 80 + "ms";
       io.observe(el);
     });
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Hero phone: cycle sample ads
-  var ads = [
-    { brand: "pawsitive.co", hook: "Your dog pulls on every walk. Here's the 10-second fix.", cta: "Shop now" },
-    { brand: "glowlab", hook: "Your skincare routine has 9 steps. Ours has 2.", cta: "Get 20% off" },
-    { brand: "urbannest.homes", hook: "3BHK, park-facing, 8 min from the metro. Tour it in 20 sec.", cta: "Book a visit" },
-    { brand: "brewhouse", hook: "Free cold brew with every brunch, this weekend only.", cta: "Reserve a table" }
+  // Contact sheet: playhead plays each angle, then stamps a winner
+  var sheet = document.getElementById("sheet");
+  var clips = Array.prototype.slice.call(sheet.querySelectorAll(".clip"));
+  var sheetPlayhead = document.getElementById("sheetPlayhead");
+  var sheetHead = document.getElementById("sheetHead");
+
+  for (var t = 0; t <= 5; t++) {
+    var mark = document.createElement("span");
+    mark.style.left = (t * 20) + "%";
+    mark.textContent = "00:" + pad(t * 6);
+    sheetHead.appendChild(mark);
+  }
+
+  function moveHead(i) {
+    var clip = clips[i];
+    sheetPlayhead.style.left = (clip.offsetLeft + clip.offsetWidth / 2) + "px";
+  }
+  function clearClips() {
+    clips.forEach(function (c) { c.classList.remove("playing", "won"); });
+  }
+
+  var lastWinner = -1;
+  if (reduceMotion) {
+    clips[2].classList.add("won");
+    moveHead(2);
+  } else {
+    var step = 0, winner = 0;
+    var tick = function () {
+      if (step < clips.length) {
+        clearClips();
+        clips[step].classList.add("playing");
+        moveHead(step);
+        step++;
+        setTimeout(tick, 900);
+      } else {
+        do { winner = Math.floor(Math.random() * clips.length); } while (winner === lastWinner);
+        lastWinner = winner;
+        clearClips();
+        moveHead(winner);
+        clips[winner].classList.add("won");
+        step = 0;
+        setTimeout(tick, 3200);
+      }
+    };
+    moveHead(0);
+    setTimeout(tick, 800);
+    window.addEventListener("resize", function () {
+      var active = sheet.querySelector(".clip.playing, .clip.won");
+      if (active) moveHead(clips.indexOf(active));
+    });
+  }
+
+  // Channels: niche tabs
+  var channels = [
+    {
+      title: "D2C & e-commerce",
+      desc: "You run Meta and Instagram ads and burn through creatives. We keep a steady flow of fresh angles coming, so ad fatigue never catches up.",
+      hooks: ["Your skincare routine has 9 steps. Ours has 2.", "I tried every serum for oily skin. One stayed.", "Stop buying serums that do nothing."]
+    },
+    {
+      title: "Real estate",
+      desc: "Listing walkthroughs, project launches and agent intros, made without waiting on a videographer for every property.",
+      hooks: ["3BHK, park-facing, 8 minutes from the metro. Take the 20-second tour.", "This is what your EMI gets you in this neighbourhood.", "Three things the brochure won't tell you about this flat."]
+    },
+    {
+      title: "Pet brands & trainers",
+      desc: "Problem-and-fix ads that pet parents stop for, whether you sell products, food or training programmes.",
+      hooks: ["Your dog pulls on every walk. Here's the 10-second fix.", "Vets keep saying this about dry food. Here's why.", "POV: your dog finally comes back when called."]
+    },
+    {
+      title: "Local business",
+      desc: "Clinics, coaches, studios and restaurants that rarely have video. Get ads that bring people through the door.",
+      hooks: ["New in Koramangala: first consultation free this week.", "The brunch your Saturday has been missing.", "Your back pain isn't 'just age'. Let's talk."]
+    }
   ];
-  var adEl = document.getElementById("heroAd");
-  var hookEl = document.getElementById("adHook");
-  var brandEl = document.getElementById("adBrand");
-  var ctaEl = document.getElementById("adCta");
-  var numEl = document.getElementById("hookNum");
-  var bar = document.getElementById("adProgress");
-  var DURATION = 3600;
-  var idx = 0;
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tv-tabs [role=tab]"));
+  var panel = document.getElementById("tvPanel");
+  var tvCh = document.getElementById("tvCh");
+  var tvTitle = document.getElementById("tvTitle");
+  var tvDesc = document.getElementById("tvDesc");
+  var tvHooks = document.getElementById("tvHooks");
 
-  function runBar() {
-    if (reduceMotion) return;
-    bar.style.transition = "none";
-    bar.style.width = "0";
-    void bar.offsetWidth;
-    bar.style.transition = "width " + DURATION + "ms linear";
-    bar.style.width = "100%";
-  }
-
-  function showAd(i) {
-    var ad = ads[i];
-    hookEl.classList.add("out");
+  function selectChannel(i, focus) {
+    tabs.forEach(function (tab, j) {
+      var on = i === j;
+      tab.setAttribute("aria-selected", String(on));
+      tab.tabIndex = on ? 0 : -1;
+    });
+    if (focus) tabs[i].focus();
+    panel.setAttribute("aria-labelledby", tabs[i].id);
+    panel.classList.add("switching");
     setTimeout(function () {
-      hookEl.textContent = ad.hook;
-      brandEl.textContent = ad.brand;
-      ctaEl.textContent = ad.cta;
-      numEl.textContent = String(i + 1);
-      adEl.setAttribute("data-theme", String(i));
-      hookEl.classList.remove("out");
-    }, reduceMotion ? 0 : 350);
-    runBar();
+      var ch = channels[i];
+      tvCh.textContent = "CH 0" + (i + 1) + " · Now showing";
+      tvTitle.textContent = ch.title;
+      tvDesc.textContent = ch.desc;
+      tvHooks.innerHTML = "";
+      ch.hooks.forEach(function (h, k) {
+        var p = document.createElement("p");
+        p.className = "hook";
+        var tag = document.createElement("span");
+        tag.className = "mono";
+        tag.textContent = "Hook " + "ABC"[k];
+        p.appendChild(tag);
+        p.appendChild(document.createTextNode("“" + h + "”"));
+        tvHooks.appendChild(p);
+      });
+      panel.classList.remove("switching");
+    }, reduceMotion ? 0 : 200);
   }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectChannel(i, false); });
+    tab.addEventListener("keydown", function (e) {
+      var dir = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (!dir) return;
+      e.preventDefault();
+      selectChannel((i + dir + tabs.length) % tabs.length, true);
+    });
+  });
 
-  if (adEl && !reduceMotion) {
-    runBar();
-    setInterval(function () {
-      idx = (idx + 1) % ads.length;
-      showAd(idx);
-    }, DURATION);
-  }
-
-  // Lead form: build a pre-filled email
+  // Slate form: clap, then open a pre-filled email
   var form = document.getElementById("leadForm");
   var note = document.getElementById("formNote");
+  var dateEl = document.getElementById("slateDate");
+  var now = new Date();
+  dateEl.textContent = "Date · " + now.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var data = new FormData(form);
-    var required = ["name", "business"];
     var missing = false;
-    required.forEach(function (key) {
-      var input = form.elements[key];
+    ["business", "name"].forEach(function (key) {
       var empty = !String(data.get(key) || "").trim();
-      input.closest(".field").classList.toggle("invalid", empty);
+      form.elements[key].closest(".field").classList.toggle("invalid", empty);
       if (empty) missing = true;
     });
     if (missing) {
-      note.textContent = "Please add your name and business name.";
+      note.textContent = "Add your business name and your name.";
       note.classList.add("err");
       return;
     }
     note.classList.remove("err");
 
-    var subject = "Video ads for " + data.get("business");
+    var subject = "Pilot request: " + data.get("business");
     var body = [
-      "Name: " + data.get("name"),
-      "Business: " + data.get("business"),
-      "Website / Instagram: " + (data.get("link") || "-"),
-      "What we sell: " + data.get("niche"),
+      "Production (business): " + data.get("business"),
+      "Director (name): " + data.get("name"),
+      "Scene (what we sell): " + data.get("niche"),
+      "Location (website / Instagram): " + (data.get("link") || "-"),
       "",
-      "Goal for the ads:",
+      "Take (goal for the ads):",
       data.get("message") || "-"
     ].join("\n");
 
-    window.location.href = "mailto:" + CONTACT_EMAIL +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-    note.textContent = "Opening your email app. If nothing happens, write to " + CONTACT_EMAIL + ".";
+    form.classList.add("clap");
+    setTimeout(function () {
+      form.classList.remove("clap");
+      window.location.href = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      note.textContent = "Opening your email app. If nothing happens, write to " + CONTACT_EMAIL + ".";
+    }, reduceMotion ? 0 : 420);
   });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = now.getFullYear();
 })();
