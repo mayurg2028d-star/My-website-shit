@@ -281,7 +281,7 @@ p { margin: 0; }
 .band-sub { margin-top: 18px; font-size: 18px; max-width: 620px; color: #2b2840; }
 
 /* pricing */
-.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: stretch; max-width: 860px; margin: 0 auto; }
 .plan { position: relative; background: #fff; border: 1px solid var(--paper-2); border-radius: var(--radius); padding: 34px 30px; display: flex; flex-direction: column; }
 .plan-step { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--violet); }
 .plan h3 { font-size: 28px; margin: 10px 0 6px; }

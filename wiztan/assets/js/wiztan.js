@@ -116,7 +116,7 @@
     }
     note.classList.remove("err");
 
-    var subject = "Free sample ads for " + data.get("business");
+    var subject = "Video ads for " + data.get("business");
     var body = [
       "Name: " + data.get("name"),
       "Business: " + data.get("business"),
